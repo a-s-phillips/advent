@@ -8,7 +8,7 @@ export function groupNumbers(input: string): Array<Array<number>> {
     group
       .split("\n")
       .map((str) => parseInt(str))
-      .filter((x) => x % 1 === 0)
+      .filter((x) => x % 1 === 0) // only get integers, no NaN, null etc
   );
   return res;
 }
