@@ -1,37 +1,37 @@
 {
-    "compilerOptions": {
-      "allowJs": true,
-      "strict": true,
-      "noImplicitAny": true
+  "compilerOptions": {
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": true
+  },
+  "lint": {
+    "files": {
+      "include": ["src/"],
+      "exclude": ["src/testdata/"]
     },
-    "lint": {
-      "files": {
-        "include": ["src/"],
-        "exclude": ["src/testdata/"]
-      },
-      "rules": {
-        "tags": ["recommended"],
-        "include": [],
-        "exclude": []
-      }
+    "rules": {
+      "tags": ["recommended"],
+      "include": [],
+      "exclude": ["noExplicitAny"]
+    }
+  },
+  "fmt": {
+    "files": {
+      "include": ["src/"],
+      "exclude": ["src/testdata/"]
     },
-    "fmt": {
-      "files": {
-        "include": ["src/"],
-        "exclude": ["src/testdata/"]
-      },
-      "options": {
-        "useTabs": false,
-        "lineWidth": 80,
-        "indentWidth": 2,
-        "singleQuote": true,
-        "proseWrap": "preserve"
-      }
-    },
-    "test": {
-      "files": {
-        "include": ["test/"],
-        "exclude": []
-      }
+    "options": {
+      "useTabs": false,
+      "lineWidth": 80,
+      "indentWidth": 2,
+      "singleQuote": true,
+      "proseWrap": "preserve"
+    }
+  },
+  "test": {
+    "files": {
+      "include": ["test/"],
+      "exclude": []
     }
   }
+}

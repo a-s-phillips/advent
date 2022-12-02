@@ -1,14 +1,15 @@
 import * as R from "https://deno.land/x/ramda@v0.27.2/mod.ts";
 
 const __dirname = new URL(".", import.meta.url).pathname;
-const input: string = Deno.readTextFileSync(__dirname + "input");
+const input: string = Deno.readTextFileSync(`${__dirname}input`);
 
 export function groupNumbers(input: string): Array<Array<number>> {
-  const res = input.split("\n\n").map((group) =>
-    group
-      .split("\n")
-      .map((str) => parseInt(str))
-      .filter((x) => x % 1 === 0) // only get integers, no NaN, null etc
+  const res = input.split("\n\n").map(
+    (group) =>
+      group
+        .split("\n")
+        .map((str) => parseInt(str))
+        .filter((x) => x % 1 === 0) // only get integers, no NaN, null etc
   );
   return res;
 }
@@ -21,7 +22,7 @@ export const getAnswer = R.compose(
 
 const answerList = getAnswer(input);
 const answer1 = answerList[0];
-const answer2 = R.sum([answerList[0], answerList[1], answerList[2]]);
+const answer2 = R.sum(R.take(3, answerList));
 
 console.log(`Answer 1: ${answer1}`);
 console.log(`Answer 2: ${answer2}`);
