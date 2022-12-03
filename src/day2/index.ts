@@ -8,11 +8,12 @@ Score is the value of the X Y or Z plus 0 for a loss, 3 for a draw, and 6 for a 
 import * as R from "https://deno.land/x/ramda@v0.27.2/mod.ts";
 
 export type Name = "A" | "B" | "C" | "X" | "Y" | "Z";
+export type Value = 1 | 2 | 3;
 export interface Hand {
   names: Name[];
-  value: 1 | 2 | 3;
-  beats: 1 | 2 | 3;
-  beatenBy: 1 | 2 | 3;
+  value: Value;
+  beats: Value;
+  beatenBy: Value;
 }
 
 const __dirname = new URL(".", import.meta.url).pathname;
