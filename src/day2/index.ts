@@ -17,7 +17,7 @@ export interface Hand {
 }
 
 const __dirname = new URL(".", import.meta.url).pathname;
-const input: string = Deno.readTextFileSync(`${__dirname}input`);
+const input: string[] = Deno.readTextFileSync(`${__dirname}input`).split("\n");
 
 export const hands: Hand[] = [
   { names: ["A", "X"], value: 1, beats: 3, beatenBy: 2 },
@@ -61,8 +61,7 @@ const replaceWithScore = (round: Hand[]): number => {
 
 const getProcessedInput = R.compose(
   R.map(R.split(" ")),
-  R.filter((x: string) => x !== ""),
-  R.split("\n")
+  R.filter((x: string) => x !== "")
 );
 
 const getAnswer1 = R.compose(
