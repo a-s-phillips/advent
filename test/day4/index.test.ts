@@ -21,9 +21,6 @@ describe("rangeStrToArr", () => {
   it("returns an array of two numbers", () => {
     assertEquals(rangeStrToArr(testData), [3, 4]);
   });
-  it("throws an error if input is not in the form '<integer>-<integer>'", () => {
-    assertThrows(rangeStrToArr("abc-def"), , );
-  });
 });
 
 describe("splitLineIntoRangeArrs", () => {
